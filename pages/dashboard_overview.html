@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khana Khazana Manager - Real-time restaurant operations dashboard with live order tracking, table management, and performance metrics">
+    <title>Dashboard Overview - Khana Khazana Manager</title>
+    <link rel="stylesheet" href="../css/main.css">
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fkhanakhaz6133back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.10"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Fixed Header -->
+    <header class="bg-surface border-b border-secondary-200 shadow-warm fixed top-0 left-0 right-0 z-50">
+        <div class="px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Brand -->
+                <div class="flex items-center gap-4">
+                    <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" fill="#8B4513"/>
+                        <path d="M20 8C15.5817 8 12 11.5817 12 16C12 18.2091 12.8954 20.2091 14.3431 21.6569L20 27.3137L25.6569 21.6569C27.1046 20.2091 28 18.2091 28 16C28 11.5817 24.4183 8 20 8Z" fill="#FF6B35"/>
+                        <circle cx="20" cy="16" r="3" fill="#FFFFFF"/>
+                        <path d="M14 28H26C26.5523 28 27 28.4477 27 29V30C27 30.5523 26.5523 31 26 31H14C13.4477 31 13 30.5523 13 30V29C13 28.4477 13.4477 28 14 28Z" fill="#D2691E"/>
+                    </svg>
+                    <div>
+                        <h1 class="text-xl font-heading font-semibold text-primary">Khana Khazana Manager</h1>
+                        <p class="text-xs text-text-secondary">Operations Command Center</p>
+                    </div>
+                </div>
+
+                <!-- Current Shift Status -->
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 px-4 py-2 bg-success-50 rounded-lg border border-success-200">
+                        <span class="status-dot status-active"></span>
+                        <div class="text-sm">
+                            <p class="font-medium text-success-800">Evening Shift Active</p>
+                            <p class="text-xs text-success-600">Started: 5:00 PM</p>
+                        </div>
+                    </div>
+
+                    <!-- User Role Badge -->
+                    <div class="flex items-center gap-3 px-4 py-2 bg-primary-50 rounded-lg border border-primary-200">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_170fbb2da-1763293178948.png" 
+                             alt="Manager profile photo" 
+                             class="w-10 h-10 rounded-full object-cover border-2 border-primary"
+                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div>
+                            <p class="text-sm font-medium text-primary-900">Rajesh Kumar</p>
+                            <p class="text-xs text-primary-600">Restaurant Manager</p>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Alert Button -->
+                    <button class="btn btn-accent flex items-center gap-2" aria-label="Emergency alerts">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1255cf8fa-1764656742509.png" alt="Alert bell icon" class="w-5 h-5">
+                        <span class="badge badge-error">2</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="mt-4 border-t border-secondary-100 pt-3" role="navigation" aria-label="Main navigation">
+                <ul class="flex items-center gap-1">
+                    <li>
+                        <a href="dashboard_overview.html" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12ea66b18-1764881903999.png" alt="Dashboard icon" class="w-5 h-5">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu_management.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1bd13d883-1764678164691.png" alt="Menu icon" class="w-5 h-5">
+                            Menu
+                        </a>
+                    </li>
+                    <li>
+                        <a href="order_processing.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c13375db-1764650244021.png" alt="Orders icon" class="w-5 h-5">
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customer_database.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14256b291-1764684278019.png" alt="Customers icon" class="w-5 h-5">
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table_management.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_108dc3086-1764989499144.png" alt="Tables icon" class="w-5 h-5">
+                            Tables
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system_administration.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13190f263-1765219370302.png" alt="Settings icon" class="w-5 h-5">
+                            Admin
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="pt-40 px-6 pb-8">
+        <!-- Quick Action Toolbar -->
+        <section class="mb-6 bg-surface rounded-lg shadow-warm p-4 border border-secondary-100">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <h2 class="text-lg font-heading font-semibold text-primary">Quick Actions</h2>
+                    <span class="text-xs text-text-secondary">(Use F1-F12 for shortcuts)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button class="btn btn-primary flex items-center gap-2" aria-label="New order">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_133f61ccb-1764650954595.png" alt="Add icon" class="w-5 h-5">
+                        New Order <span class="text-xs opacity-75">(F1)</span>
+                    </button>
+                    <button class="btn btn-secondary flex items-center gap-2" aria-label="Update inventory">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b83e1d15-1764682762920.png" alt="Inventory icon" class="w-5 h-5">
+                        Inventory <span class="text-xs opacity-75">(F2)</span>
+                    </button>
+                    <button class="btn btn-outline flex items-center gap-2" aria-label="Staff schedule">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1cc4200b9-1764894086576.png" alt="Schedule icon" class="w-5 h-5">
+                        Schedule <span class="text-xs opacity-75">(F3)</span>
+                    </button>
+                    <button class="btn btn-outline flex items-center gap-2" aria-label="Generate report">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16f526503-1765219370581.png" alt="Report icon" class="w-5 h-5">
+                        Export Report <span class="text-xs opacity-75">(F4)</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Integration Status -->
+        <section class="mb-6 grid grid-cols-4 gap-4">
+            <div class="card p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Success checkmark icon" class="w-7 h-7">
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-text-primary">POS System</p>
+                    <p class="text-xs text-success-600 flex items-center gap-1">
+                        <span class="status-dot status-active"></span>
+                        Connected
+                    </p>
+                </div>
+            </div>
+            <div class="card p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Success checkmark icon" class="w-7 h-7">
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-text-primary">Kitchen Display</p>
+                    <p class="text-xs text-success-600 flex items-center gap-1">
+                        <span class="status-dot status-active"></span>
+                        Synced
+                    </p>
+                </div>
+            </div>
+            <div class="card p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Success checkmark icon" class="w-7 h-7">
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-text-primary">Payment Gateway</p>
+                    <p class="text-xs text-success-600 flex items-center gap-1">
+                        <span class="status-dot status-active"></span>
+                        Online
+                    </p>
+                </div>
+            </div>
+            <div class="card p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-warning-100 rounded-lg flex items-center justify-center">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1920ac7df-1764669799860.png" alt="Warning alert icon" class="w-7 h-7">
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-text-primary">Backup System</p>
+                    <p class="text-xs text-warning-600 flex items-center gap-1">
+                        <span class="status-dot status-pending"></span>
+                        Last: 2 hrs ago
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Four-Quadrant Dashboard -->
+        <div class="grid grid-cols-2 gap-6 mb-6">
+            <!-- Top Left: Live Order Queue -->
+            <section class="card p-6" id="order-queue">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-heading font-semibold text-primary flex items-center gap-2">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13233ce22-1764676196998.png" alt="Order list icon" class="w-6 h-6">
+                        Live Order Queue
+                    </h2>
+                    <span class="badge badge-primary text-base px-3 py-1">12 Active</span>
+                </div>
+
+                <div class="space-y-3 max-h-96 overflow-y-auto">
+                    <!-- Order Item 1 -->
+                    <div class="border border-warning-200 bg-warning-50 rounded-lg p-4 transition-smooth hover:shadow-warm-md">
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="badge badge-warning font-semibold">Table 5</span>
+                                <span class="text-sm font-medium text-text-primary">#ORD-2847</span>
+                            </div>
+                            <span class="text-xs font-mono text-warning-700 font-semibold">12 min</span>
+                        </div>
+                        <p class="text-sm text-text-secondary mb-2">Butter Chicken, Naan (2), Mango Lassi</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-text-secondary">Ordered: 6:15 PM</span>
+                            <span class="badge bg-warning text-white">Preparing</span>
+                        </div>
+                    </div>
+
+                    <!-- Order Item 2 -->
+                    <div class="border border-accent-200 bg-accent-50 rounded-lg p-4 transition-smooth hover:shadow-warm-md">
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="badge badge-error font-semibold">Table 12</span>
+                                <span class="text-sm font-medium text-text-primary">#ORD-2848</span>
+                            </div>
+                            <span class="text-xs font-mono text-error font-semibold">18 min</span>
+                        </div>
+                        <p class="text-sm text-text-secondary mb-2">Paneer Tikka, Dal Makhani, Roti (3)</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-text-secondary">Ordered: 6:09 PM</span>
+                            <span class="badge bg-error text-white">Delayed</span>
+                        </div>
+                    </div>
+
+                    <!-- Order Item 3 -->
+                    <div class="border border-success-200 bg-success-50 rounded-lg p-4 transition-smooth hover:shadow-warm-md">
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="badge badge-success font-semibold">Table 8</span>
+                                <span class="text-sm font-medium text-text-primary">#ORD-2849</span>
+                            </div>
+                            <span class="text-xs font-mono text-success-700 font-semibold">5 min</span>
+                        </div>
+                        <p class="text-sm text-text-secondary mb-2">Biryani (Veg), Raita, Gulab Jamun</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-text-secondary">Ordered: 6:22 PM</span>
+                            <span class="badge bg-success text-white">Ready</span>
+                        </div>
+                    </div>
+
+                    <!-- Order Item 4 -->
+                    <div class="border border-secondary-200 bg-surface rounded-lg p-4 transition-smooth hover:shadow-warm-md">
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="badge badge-primary font-semibold">Table 3</span>
+                                <span class="text-sm font-medium text-text-primary">#ORD-2850</span>
+                            </div>
+                            <span class="text-xs font-mono text-primary font-semibold">8 min</span>
+                        </div>
+                        <p class="text-sm text-text-secondary mb-2">Tandoori Chicken, Naan, Salad</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-text-secondary">Ordered: 6:19 PM</span>
+                            <span class="badge bg-secondary text-white">Cooking</span>
+                        </div>
+                    </div>
+
+                    <!-- Order Item 5 -->
+                    <div class="border border-warning-200 bg-warning-50 rounded-lg p-4 transition-smooth hover:shadow-warm-md">
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="badge badge-warning font-semibold">Table 15</span>
+                                <span class="text-sm font-medium text-text-primary">#ORD-2851</span>
+                            </div>
+                            <span class="text-xs font-mono text-warning-700 font-semibold">10 min</span>
+                        </div>
+                        <p class="text-sm text-text-secondary mb-2">Chole Bhature, Lassi (2)</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-text-secondary">Ordered: 6:17 PM</span>
+                            <span class="badge bg-warning text-white">Preparing</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Right: Table Occupancy Grid -->
+            <section class="card p-6" id="table-occupancy">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-heading font-semibold text-primary flex items-center gap-2">
+                        <img src="https://images.unsplash.com/photo-1528441010156-6a688ec6f8df" alt="Table icon" class="w-6 h-6">
+                        Table Occupancy
+                    </h2>
+                    <span class="text-sm text-text-secondary">18/25 Occupied</span>
+                </div>
+
+                <!-- Table Grid -->
+                <div class="grid grid-cols-5 gap-3 mb-6">
+                    <!-- Occupied Tables -->
+                    <div class="bg-error-100 border-2 border-error rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-error-800">T1</p>
+                        <p class="text-xs text-error-600">4 Guests</p>
+                        <p class="text-xs text-error-600 font-mono">45m</p>
+                    </div>
+                    <div class="bg-success-100 border-2 border-success rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-success-800">T2</p>
+                        <p class="text-xs text-success-600">Available</p>
+                    </div>
+                    <div class="bg-error-100 border-2 border-error rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-error-800">T3</p>
+                        <p class="text-xs text-error-600">2 Guests</p>
+                        <p class="text-xs text-error-600 font-mono">28m</p>
+                    </div>
+                    <div class="bg-success-100 border-2 border-success rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-success-800">T4</p>
+                        <p class="text-xs text-success-600">Available</p>
+                    </div>
+                    <div class="bg-error-100 border-2 border-error rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-error-800">T5</p>
+                        <p class="text-xs text-error-600">6 Guests</p>
+                        <p class="text-xs text-error-600 font-mono">32m</p>
+                    </div>
+                    <div class="bg-error-100 border-2 border-error rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-error-800">T6</p>
+                        <p class="text-xs text-error-600">3 Guests</p>
+                        <p class="text-xs text-error-600 font-mono">15m</p>
+                    </div>
+                    <div class="bg-success-100 border-2 border-success rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-success-800">T7</p>
+                        <p class="text-xs text-success-600">Available</p>
+                    </div>
+                    <div class="bg-error-100 border-2 border-error rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-error-800">T8</p>
+                        <p class="text-xs text-error-600">4 Guests</p>
+                        <p class="text-xs text-error-600 font-mono">22m</p>
+                    </div>
+                    <div class="bg-warning-100 border-2 border-warning rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-warning-800">T9</p>
+                        <p class="text-xs text-warning-600">Reserved</p>
+                        <p class="text-xs text-warning-600 font-mono">7:30 PM</p>
+                    </div>
+                    <div class="bg-error-100 border-2 border-error rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-error-800">T10</p>
+                        <p class="text-xs text-error-600">2 Guests</p>
+                        <p class="text-xs text-error-600 font-mono">38m</p>
+                    </div>
+                    <div class="bg-success-100 border-2 border-success rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-success-800">T11</p>
+                        <p class="text-xs text-success-600">Available</p>
+                    </div>
+                    <div class="bg-error-100 border-2 border-error rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-error-800">T12</p>
+                        <p class="text-xs text-error-600">5 Guests</p>
+                        <p class="text-xs text-error-600 font-mono">41m</p>
+                    </div>
+                    <div class="bg-success-100 border-2 border-success rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-success-800">T13</p>
+                        <p class="text-xs text-success-600">Available</p>
+                    </div>
+                    <div class="bg-success-100 border-2 border-success rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-success-800">T14</p>
+                        <p class="text-xs text-success-600">Available</p>
+                    </div>
+                    <div class="bg-error-100 border-2 border-error rounded-lg p-3 text-center transition-smooth hover:shadow-warm-md cursor-pointer">
+                        <p class="text-lg font-bold text-error-800">T15</p>
+                        <p class="text-xs text-error-600">3 Guests</p>
+                        <p class="text-xs text-error-600 font-mono">19m</p>
+                    </div>
+                </div>
+
+                <!-- Reservation Timeline -->
+                <div class="border-t border-secondary-200 pt-4">
+                    <h3 class="text-sm font-semibold text-primary mb-3">Upcoming Reservations</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-2 bg-warning-50 rounded border border-warning-200">
+                            <div class="flex items-center gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c9d2cafb-1764674598571.png" alt="Clock icon" class="w-5 h-5">
+                                <div>
+                                    <p class="text-sm font-medium text-text-primary">Sharma Family</p>
+                                    <p class="text-xs text-text-secondary">Table 9 • 4 Guests</p>
+                                </div>
+                            </div>
+                            <span class="text-sm font-semibold text-warning-700">7:30 PM</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 bg-warning-50 rounded border border-warning-200">
+                            <div class="flex items-center gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c9d2cafb-1764674598571.png" alt="Clock icon" class="w-5 h-5">
+                                <div>
+                                    <p class="text-sm font-medium text-text-primary">Patel Group</p>
+                                    <p class="text-xs text-text-secondary">Table 16 • 8 Guests</p>
+                                </div>
+                            </div>
+                            <span class="text-sm font-semibold text-warning-700">8:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Left: Today's Sales Metrics -->
+            <section class="card p-6" id="sales-metrics">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-heading font-semibold text-primary flex items-center gap-2">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1e8c45c67-1764669815371.png" alt="Chart icon" class="w-6 h-6">
+                        Today's Sales
+                    </h2>
+                    <span class="text-sm text-text-secondary">Dec 8, 2025</span>
+                </div>
+
+                <!-- Sales Summary Cards -->
+                <div class="grid grid-cols-3 gap-3 mb-6">
+                    <div class="bg-success-50 border border-success-200 rounded-lg p-4 text-center">
+                        <p class="text-xs text-success-600 mb-1">Total Revenue</p>
+                        <p class="text-2xl font-bold text-success-800">$4,285</p>
+                        <p class="text-xs text-success-600 mt-1">↑ 12% vs yesterday</p>
+                    </div>
+                    <div class="bg-primary-50 border border-primary-200 rounded-lg p-4 text-center">
+                        <p class="text-xs text-primary-600 mb-1">Orders</p>
+                        <p class="text-2xl font-bold text-primary-800">87</p>
+                        <p class="text-xs text-primary-600 mt-1">↑ 8% vs yesterday</p>
+                    </div>
+                    <div class="bg-accent-50 border border-accent-200 rounded-lg p-4 text-center">
+                        <p class="text-xs text-accent-600 mb-1">Avg Order Value</p>
+                        <p class="text-2xl font-bold text-accent-800">$49.25</p>
+                        <p class="text-xs text-accent-600 mt-1">↑ 4% vs yesterday</p>
+                    </div>
+                </div>
+
+                <!-- Hourly Breakdown Chart -->
+                <div class="border border-secondary-200 rounded-lg p-4 bg-surface">
+                    <h3 class="text-sm font-semibold text-primary mb-3">Hourly Revenue Breakdown</h3>
+                    <div class="relative h-48" aria-label="Hourly revenue chart showing sales from 11 AM to 6 PM">
+                        <svg viewBox="0 0 400 180" class="w-full h-full">
+                            <!-- Grid Lines -->
+                            <line x1="40" y1="20" x2="40" y2="160" stroke="#D4B89E" stroke-width="1"/>
+                            <line x1="40" y1="160" x2="380" y2="160" stroke="#D4B89E" stroke-width="1"/>
+                            
+                            <!-- Y-axis labels -->
+                            <text x="30" y="25" font-size="10" fill="#6B4E3D" text-anchor="end">$800</text>
+                            <text x="30" y="60" font-size="10" fill="#6B4E3D" text-anchor="end">$600</text>
+                            <text x="30" y="95" font-size="10" fill="#6B4E3D" text-anchor="end">$400</text>
+                            <text x="30" y="130" font-size="10" fill="#6B4E3D" text-anchor="end">$200</text>
+                            <text x="30" y="165" font-size="10" fill="#6B4E3D" text-anchor="end">$0</text>
+                            
+                            <!-- Bar Chart -->
+                            <rect x="60" y="120" width="30" height="40" fill="#228B22" rx="2"/>
+                            <rect x="105" y="100" width="30" height="60" fill="#228B22" rx="2"/>
+                            <rect x="150" y="70" width="30" height="90" fill="#FF6B35" rx="2"/>
+                            <rect x="195" y="50" width="30" height="110" fill="#FF6B35" rx="2"/>
+                            <rect x="240" y="80" width="30" height="80" fill="#FF6B35" rx="2"/>
+                            <rect x="285" y="40" width="30" height="120" fill="#D2691E" rx="2"/>
+                            <rect x="330" y="90" width="30" height="70" fill="#8B4513" rx="2"/>
+                            
+                            <!-- X-axis labels -->
+                            <text x="75" y="175" font-size="10" fill="#6B4E3D" text-anchor="middle">11AM</text>
+                            <text x="120" y="175" font-size="10" fill="#6B4E3D" text-anchor="middle">12PM</text>
+                            <text x="165" y="175" font-size="10" fill="#6B4E3D" text-anchor="middle">1PM</text>
+                            <text x="210" y="175" font-size="10" fill="#6B4E3D" text-anchor="middle">2PM</text>
+                            <text x="255" y="175" font-size="10" fill="#6B4E3D" text-anchor="middle">3PM</text>
+                            <text x="300" y="175" font-size="10" fill="#6B4E3D" text-anchor="middle">4PM</text>
+                            <text x="345" y="175" font-size="10" fill="#6B4E3D" text-anchor="middle">5PM</text>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Right: Inventory Alerts & Staff Status -->
+            <section class="card p-6" id="alerts-staff">
+                <div class="mb-6">
+                    <h2 class="text-xl font-heading font-semibold text-primary flex items-center gap-2 mb-4">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_155454e2c-1764929109627.png" alt="Alert icon" class="w-6 h-6">
+                        Inventory Alerts
+                    </h2>
+                    
+                    <div class="space-y-3">
+                        <div class="border border-error-200 bg-error-50 rounded-lg p-3 flex items-start gap-3">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_17b14a5dc-1764740839947.png" alt="Critical alert icon" class="w-6 h-6 mt-0.5">
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-error-800">Critical: Chicken Stock</p>
+                                <p class="text-xs text-error-600">Only 5 kg remaining • Reorder immediately</p>
+                                <button class="mt-2 text-xs text-error-700 font-medium hover:underline">Order Now →</button>
+                            </div>
+                        </div>
+                        
+                        <div class="border border-warning-200 bg-warning-50 rounded-lg p-3 flex items-start gap-3">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1920ac7df-1764669799860.png" alt="Warning alert icon" class="w-6 h-6 mt-0.5">
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-warning-800">Low: Basmati Rice</p>
+                                <p class="text-xs text-warning-600">12 kg remaining • Order within 2 days</p>
+                                <button class="mt-2 text-xs text-warning-700 font-medium hover:underline">View Details →</button>
+                            </div>
+                        </div>
+                        
+                        <div class="border border-warning-200 bg-warning-50 rounded-lg p-3 flex items-start gap-3">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1920ac7df-1764669799860.png" alt="Warning alert icon" class="w-6 h-6 mt-0.5">
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-warning-800">Low: Paneer</p>
+                                <p class="text-xs text-warning-600">8 kg remaining • Order within 3 days</p>
+                                <button class="mt-2 text-xs text-warning-700 font-medium hover:underline">View Details →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-secondary-200 pt-6">
+                    <h2 class="text-xl font-heading font-semibold text-primary flex items-center gap-2 mb-4">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1908141b4-1764792746929.png" alt="Staff icon" class="w-6 h-6">
+                        Staff Status
+                    </h2>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg border border-success-200">
+                            <div class="flex items-center gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_178117716-1763297985142.png" 
+                                     alt="Chef Amit Kumar profile photo" 
+                                     class="w-10 h-10 rounded-full object-cover border-2 border-success"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div>
+                                    <p class="text-sm font-medium text-text-primary">Amit Kumar</p>
+                                    <p class="text-xs text-text-secondary">Head Chef</p>
+                                </div>
+                            </div>
+                            <span class="flex items-center gap-1 text-xs text-success-700">
+                                <span class="status-dot status-active"></span>
+                                On Duty
+                            </span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg border border-success-200">
+                            <div class="flex items-center gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_19e351db8-1763299920391.png" 
+                                     alt="Server Priya Singh profile photo" 
+                                     class="w-10 h-10 rounded-full object-cover border-2 border-success"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div>
+                                    <p class="text-sm font-medium text-text-primary">Priya Singh</p>
+                                    <p class="text-xs text-text-secondary">Senior Server</p>
+                                </div>
+                            </div>
+                            <span class="flex items-center gap-1 text-xs text-success-700">
+                                <span class="status-dot status-active"></span>
+                                On Duty
+                            </span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-3 bg-warning-50 rounded-lg border border-warning-200">
+                            <div class="flex items-center gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b0499217-1763298827861.png" 
+                                     alt="Cashier Rahul Verma profile photo" 
+                                     class="w-10 h-10 rounded-full object-cover border-2 border-warning"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div>
+                                    <p class="text-sm font-medium text-text-primary">Rahul Verma</p>
+                                    <p class="text-xs text-text-secondary">Cashier</p>
+                                </div>
+                            </div>
+                            <span class="flex items-center gap-1 text-xs text-warning-700">
+                                <span class="status-dot status-pending"></span>
+                                Break (15m)
+                            </span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-secondary-200">
+                            <div class="flex items-center gap-3">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_19e351db8-1763299920391.png" 
+                                     alt="Server Neha Gupta profile photo" 
+                                     class="w-10 h-10 rounded-full object-cover border-2 border-secondary-300"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <div>
+                                    <p class="text-sm font-medium text-text-primary">Neha Gupta</p>
+                                    <p class="text-xs text-text-secondary">Server</p>
+                                </div>
+                            </div>
+                            <span class="flex items-center gap-1 text-xs text-text-secondary">
+                                <span class="status-dot status-inactive"></span>
+                                Off Duty
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Central KPI Widget Area -->
+        <section class="grid grid-cols-4 gap-4 mb-6">
+            <div class="card p-6 card-hover">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1e94b7cfc-1764688387163.png" alt="Target icon" class="w-7 h-7">
+                    </div>
+                    <span class="badge badge-success">On Track</span>
+                </div>
+                <h3 class="text-sm text-text-secondary mb-1">Revenue Target</h3>
+                <p class="text-2xl font-bold text-primary mb-2">$4,285</p>
+                <div class="w-full bg-secondary-100 rounded-full h-2">
+                    <div class="bg-success h-2 rounded-full" style="width: 85.7%"></div>
+                </div>
+                <p class="text-xs text-text-secondary mt-2">85.7% of $5,000 daily goal</p>
+            </div>
+
+            <div class="card p-6 card-hover">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_162b4a239-1765010680896.png" alt="Cash icon" class="w-7 h-7">
+                    </div>
+                    <span class="badge badge-primary">Good</span>
+                </div>
+                <h3 class="text-sm text-text-secondary mb-1">Avg Order Value</h3>
+                <p class="text-2xl font-bold text-accent mb-2">$49.25</p>
+                <p class="text-xs text-success-600 flex items-center gap-1">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1640f6964-1764643880397.png" alt="Up arrow icon" class="w-4 h-4">
+                    +4% vs yesterday
+                </p>
+            </div>
+
+            <div class="card p-6 card-hover">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10b188943-1764828049204.png" alt="Chef hat icon" class="w-7 h-7">
+                    </div>
+                    <span class="badge badge-success">Excellent</span>
+                </div>
+                <h3 class="text-sm text-text-secondary mb-1">Kitchen Efficiency</h3>
+                <p class="text-2xl font-bold text-success mb-2">94%</p>
+                <p class="text-xs text-text-secondary">Avg prep time: 12.5 min</p>
+            </div>
+
+            <div class="card p-6 card-hover">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-12 h-12 bg-warning-100 rounded-lg flex items-center justify-center">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c9d2cafb-1764674598571.png" alt="Clock icon" class="w-7 h-7">
+                    </div>
+                    <span class="badge badge-warning">Monitor</span>
+                </div>
+                <h3 class="text-sm text-text-secondary mb-1">Customer Wait Time</h3>
+                <p class="text-2xl font-bold text-warning mb-2">18 min</p>
+                <p class="text-xs text-warning-600 flex items-center gap-1">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1640f6964-1764643880397.png" alt="Up arrow icon" class="w-4 h-4">
+                    +3 min vs target
+                </p>
+            </div>
+        </section>
+
+        <!-- Additional Manager Metrics -->
+        <section class="grid grid-cols-3 gap-6">
+            <div class="card p-6">
+                <h3 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d032d091-1764854695247.png" alt="Dollar icon" class="w-5 h-5">
+                    Cost Analysis
+                </h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-secondary">Food Cost</span>
+                        <span class="text-sm font-semibold text-text-primary">$1,285 (30%)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-secondary">Labor Cost</span>
+                        <span class="text-sm font-semibold text-text-primary">$1,071 (25%)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-secondary">Overhead</span>
+                        <span class="text-sm font-semibold text-text-primary">$643 (15%)</span>
+                    </div>
+                    <div class="border-t border-secondary-200 pt-3 flex items-center justify-between">
+                        <span class="text-sm font-semibold text-primary">Net Profit</span>
+                        <span class="text-lg font-bold text-success">$1,286 (30%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <h3 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15e0ce5c2-1764664616830.png" alt="Star icon" class="w-5 h-5">
+                    Staff Performance
+                </h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11f9dcd0a-1765181753328.png" 
+                                 alt="Priya Singh profile photo" 
+                                 class="w-8 h-8 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <span class="text-sm text-text-primary">Priya Singh</span>
+                        </div>
+                        <span class="text-sm font-semibold text-success">23 orders</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae0f3431-1763296290027.png" 
+                                 alt="Amit Kumar profile photo" 
+                                 class="w-8 h-8 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <span class="text-sm text-text-primary">Amit Kumar</span>
+                        </div>
+                        <span class="text-sm font-semibold text-success">98% accuracy</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae0f3431-1763296290027.png" 
+                                 alt="Rahul Verma profile photo" 
+                                 class="w-8 h-8 rounded-full object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <span class="text-sm text-text-primary">Rahul Verma</span>
+                        </div>
+                        <span class="text-sm font-semibold text-success">$2,145 processed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <h3 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15142e23c-1764649393901.png" alt="Food icon" class="w-5 h-5">
+                    Top Selling Items
+                </h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-primary">Butter Chicken</span>
+                        <span class="text-sm font-semibold text-accent">18 orders</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-primary">Paneer Tikka</span>
+                        <span class="text-sm font-semibold text-accent">15 orders</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-primary">Biryani (Veg)</span>
+                        <span class="text-sm font-semibold text-accent">12 orders</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-primary">Tandoori Chicken</span>
+                        <span class="text-sm font-semibold text-accent">11 orders</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-secondary-200 mt-12 py-6 px-6">
+        <div class="flex items-center justify-between">
+            <p class="text-sm text-text-secondary">© 2025 Khana Khazana Manager. All Rights Reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="javascript:void(0)" class="text-sm text-text-secondary hover:text-primary transition-smooth">Help & Support</a>
+                <a href="javascript:void(0)" class="text-sm text-text-secondary hover:text-primary transition-smooth">System Status</a>
+                <a href="javascript:void(0)" class="text-sm text-text-secondary hover:text-primary transition-smooth">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Real-time Update Indicator -->
+    <div class="fixed bottom-6 right-6 bg-success text-white px-4 py-2 rounded-lg shadow-warm-lg flex items-center gap-2 z-50">
+        <span class="status-dot bg-white"></span>
+        <span class="text-sm font-medium">Live Updates Active</span>
+    </div>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

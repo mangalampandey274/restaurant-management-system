@@ -1,0 +1,330 @@
+/* Khana Khazana Manager - Tailwind CSS Custom Styles */
+/* Generated: 2025-12-08 */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors - Warm Saddle Brown */
+    --color-primary: #8B4513; /* brown-700 */
+    --color-primary-50: #F5EDE6;
+    --color-primary-100: #E6D4C4;
+    --color-primary-200: #D4B89E;
+    --color-primary-300: #C29C78;
+    --color-primary-400: #B5855C;
+    --color-primary-500: #A86F40;
+    --color-primary-600: #8B4513; /* brown-700 */
+    --color-primary-700: #6D3610;
+    --color-primary-800: #4F270C;
+    --color-primary-900: #311808;
+
+    /* Secondary Colors - Chocolate Orange */
+    --color-secondary: #D2691E; /* chocolate */
+    --color-secondary-50: #FBF2EC;
+    --color-secondary-100: #F5DCC9;
+    --color-secondary-200: #EEC4A3;
+    --color-secondary-300: #E7AC7D;
+    --color-secondary-400: #E19860;
+    --color-secondary-500: #DB8443;
+    --color-secondary-600: #D2691E; /* chocolate */
+    --color-secondary-700: #A85318;
+    --color-secondary-800: #7E3E12;
+    --color-secondary-900: #54290C;
+
+    /* Accent Colors - Vibrant Coral Orange */
+    --color-accent: #FF6B35; /* coral-orange */
+    --color-accent-50: #FFF0EC;
+    --color-accent-100: #FFD9CE;
+    --color-accent-200: #FFBFAD;
+    --color-accent-300: #FFA58C;
+    --color-accent-400: #FF8B6B;
+    --color-accent-500: #FF6B35; /* coral-orange */
+    --color-accent-600: #E64E1A;
+    --color-accent-700: #B83D14;
+    --color-accent-800: #8A2D0F;
+    --color-accent-900: #5C1E0A;
+
+    /* Background Colors */
+    --color-background: #FAFAF9; /* warm-gray-50 */
+    --color-surface: #FFFFFF; /* white */
+
+    /* Text Colors */
+    --color-text-primary: #2D1810; /* brown-900 */
+    --color-text-secondary: #6B4E3D; /* brown-600 */
+
+    /* Status Colors */
+    --color-success: #228B22; /* forest-green */
+    --color-success-50: #E8F5E8;
+    --color-success-100: #C3E6C3;
+    --color-success-200: #9DD69D;
+    --color-success-300: #77C677;
+    --color-success-400: #51B651;
+    --color-success-500: #228B22; /* forest-green */
+    --color-success-600: #1B6F1B;
+    --color-success-700: #145314;
+    --color-success-800: #0D370D;
+    --color-success-900: #061B06;
+
+    --color-warning: #FF8C00; /* dark-orange */
+    --color-warning-50: #FFF5E6;
+    --color-warning-100: #FFE4BF;
+    --color-warning-200: #FFD299;
+    --color-warning-300: #FFC073;
+    --color-warning-400: #FFAE4D;
+    --color-warning-500: #FF8C00; /* dark-orange */
+    --color-warning-600: #CC7000;
+    --color-warning-700: #995400;
+    --color-warning-800: #663800;
+    --color-warning-900: #331C00;
+
+    --color-error: #DC143C; /* crimson */
+    --color-error-50: #FCEAEE;
+    --color-error-100: #F7C5D0;
+    --color-error-200: #F2A0B2;
+    --color-error-300: #ED7B94;
+    --color-error-400: #E85676;
+    --color-error-500: #E33158;
+    --color-error-600: #DC143C; /* crimson */
+    --color-error-700: #B0102F;
+    --color-error-800: #840C23;
+    --color-error-900: #580817;
+
+    /* Shadow Colors */
+    --shadow-primary: rgba(139, 69, 19, 0.1);
+    --shadow-primary-md: rgba(139, 69, 19, 0.15);
+    --shadow-primary-lg: rgba(139, 69, 19, 0.2);
+  }
+
+  * {
+    @apply border-secondary-200;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+}
+
+@layer components {
+  /* Card Components */
+  .card {
+    @apply bg-surface rounded-lg shadow-sm border border-secondary-100 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-md hover:-translate-y-0.5;
+  }
+
+  /* Button Components */
+  .btn {
+    @apply px-4 py-2 rounded font-medium transition-all duration-150 ease-out;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-700 focus:ring-primary-500;
+    @apply shadow-sm hover:shadow-md active:scale-98;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary-700 focus:ring-secondary-500;
+    @apply shadow-sm hover:shadow-md active:scale-98;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent-600 focus:ring-accent-500;
+    @apply shadow-sm hover:shadow-md active:scale-98;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+    @apply focus:ring-primary-500 active:scale-98;
+  }
+
+  /* Input Components */
+  .input {
+    @apply w-full px-4 py-2 border border-secondary-200 rounded bg-surface;
+    @apply text-text-primary placeholder-text-secondary;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply transition-all duration-150;
+  }
+
+  .input-error {
+    @apply border-error focus:ring-error;
+  }
+
+  /* Badge Components */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply bg-success-100 text-success-800;
+  }
+
+  .badge-warning {
+    @apply bg-warning-100 text-warning-800;
+  }
+
+  .badge-error {
+    @apply bg-error-100 text-error-800;
+  }
+
+  .badge-primary {
+    @apply bg-primary-100 text-primary-800;
+  }
+
+  /* Loading States */
+  .skeleton {
+    @apply animate-pulse bg-secondary-100 rounded;
+  }
+
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  /* Status Indicators */
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+
+  .status-active {
+    @apply bg-success animate-pulse;
+  }
+
+  .status-pending {
+    @apply bg-warning;
+  }
+
+  .status-inactive {
+    @apply bg-secondary-300;
+  }
+
+  .status-error {
+    @apply bg-error;
+  }
+}
+
+@layer utilities {
+  /* Custom Shadows */
+  .shadow-warm-sm {
+    box-shadow: 0 1px 2px 0 var(--shadow-primary);
+  }
+
+  .shadow-warm {
+    box-shadow: 0 1px 3px 0 var(--shadow-primary), 0 1px 2px 0 var(--shadow-primary);
+  }
+
+  .shadow-warm-md {
+    box-shadow: 0 4px 6px -1px var(--shadow-primary-md), 0 2px 4px -1px var(--shadow-primary);
+  }
+
+  .shadow-warm-lg {
+    box-shadow: 0 10px 15px -3px var(--shadow-primary-md), 0 4px 6px -2px var(--shadow-primary);
+  }
+
+  .shadow-warm-xl {
+    box-shadow: 0 20px 25px -5px var(--shadow-primary-lg), 0 10px 10px -5px var(--shadow-primary);
+  }
+
+  /* Scale Utilities */
+  .scale-98 {
+    transform: scale(0.98);
+  }
+
+  /* Transition Utilities */
+  .transition-micro {
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+  }
+
+  .transition-smooth {
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+  }
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .shimmer::after {
+    animation: none;
+  }
+
+  .status-active {
+    animation: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+
+  .card {
+    @apply shadow-none border border-gray-300;
+  }
+}

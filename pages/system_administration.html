@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khana Khazana Manager - System Administration panel for user management, security, and system configuration">
+    <title>System Administration - Khana Khazana Manager</title>
+    <link rel="stylesheet" href="../css/main.css">
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fkhanakhaz6133back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.10"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Fixed Header -->
+    <header class="bg-surface border-b border-secondary-200 shadow-warm fixed top-0 left-0 right-0 z-50">
+        <div class="px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Brand -->
+                <div class="flex items-center gap-4">
+                    <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" fill="#8B4513"/>
+                        <path d="M20 8C15.5817 8 12 11.5817 12 16C12 18.2091 12.8954 20.2091 14.3431 21.6569L20 27.3137L25.6569 21.6569C27.1046 20.2091 28 18.2091 28 16C28 11.5817 24.4183 8 20 8Z" fill="#FF6B35"/>
+                        <circle cx="20" cy="16" r="3" fill="#FFFFFF"/>
+                        <path d="M14 28H26C26.5523 28 27 28.4477 27 29V30C27 30.5523 26.5523 31 26 31H14C13.4477 31 13 30.5523 13 30V29C13 28.4477 13.4477 28 14 28Z" fill="#D2691E"/>
+                    </svg>
+                    <div>
+                        <h1 class="text-xl font-heading font-semibold text-primary">Khana Khazana Manager</h1>
+                        <p class="text-xs text-text-secondary">System Administration</p>
+                    </div>
+                </div>
+
+                <!-- Current Shift Status -->
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 px-4 py-2 bg-success-50 rounded-lg border border-success-200">
+                        <span class="status-dot status-active"></span>
+                        <div class="text-sm">
+                            <p class="font-medium text-success-800">Evening Shift Active</p>
+                            <p class="text-xs text-success-600">Started: 5:00 PM</p>
+                        </div>
+                    </div>
+
+                    <!-- User Role Badge -->
+                    <div class="flex items-center gap-3 px-4 py-2 bg-primary-50 rounded-lg border border-primary-200">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_170fbb2da-1763293178948.png" 
+                             alt="Manager profile photo" 
+                             class="w-10 h-10 rounded-full object-cover border-2 border-primary"
+                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div>
+                            <p class="text-sm font-medium text-primary-900">Rajesh Kumar</p>
+                            <p class="text-xs text-primary-600">Restaurant Manager</p>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Alert Button -->
+                    <button class="btn btn-accent flex items-center gap-2" aria-label="Emergency alerts">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1255cf8fa-1764656742509.png" alt="Alert bell icon" class="w-5 h-5">
+                        <span class="badge badge-error">2</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="mt-4 border-t border-secondary-100 pt-3" role="navigation" aria-label="Main navigation">
+                <ul class="flex items-center gap-1">
+                    <li>
+                        <a href="dashboard_overview.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12ea66b18-1764881903999.png" alt="Dashboard icon" class="w-5 h-5">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu_management.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1bd13d883-1764678164691.png" alt="Menu icon" class="w-5 h-5">
+                            Menu
+                        </a>
+                    </li>
+                    <li>
+                        <a href="order_processing.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c13375db-1764650244021.png" alt="Orders icon" class="w-5 h-5">
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customer_database.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14256b291-1764684278019.png" alt="Customers icon" class="w-5 h-5">
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table_management.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_108dc3086-1764989499144.png" alt="Tables icon" class="w-5 h-5">
+                            Tables
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system_administration.html" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13190f263-1765219370302.png" alt="Settings icon" class="w-5 h-5">
+                            Admin
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-40 px-6 pb-8">
+        <!-- Page Header -->
+        <section class="mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-heading font-semibold text-primary mb-2">System Administration</h2>
+                    <p class="text-text-secondary">Manage users, security, system configuration, and integrations</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button class="btn btn-outline flex items-center gap-2" aria-label="View system logs">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11d0c3a84-1764633694190.png" alt="Document icon" class="w-5 h-5">
+                        System Logs
+                    </button>
+                    <button class="btn btn-primary flex items-center gap-2" aria-label="Create backup">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b9ac1331-1764694928601.png" alt="Backup icon" class="w-5 h-5">
+                        Create Backup
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Health Status -->
+        <section class="mb-6 grid grid-cols-4 gap-4">
+            <div class="card p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b83eac94-1765108712674.png" alt="Server icon" class="w-7 h-7">
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-text-primary">System Status</p>
+                    <p class="text-xs text-success-600 flex items-center gap-1">
+                        <span class="status-dot status-active"></span>
+                        All Systems Operational
+                    </p>
+                </div>
+            </div>
+            <div class="card p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_164343987-1764688212179.png" alt="Database icon" class="w-7 h-7">
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-text-primary">Database</p>
+                    <p class="text-xs text-success-600 flex items-center gap-1">
+                        <span class="status-dot status-active"></span>
+                        Connected
+                    </p>
+                </div>
+            </div>
+            <div class="card p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-warning-100 rounded-lg flex items-center justify-center">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b9ac1331-1764694928601.png" alt="Backup icon" class="w-7 h-7">
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-text-primary">Last Backup</p>
+                    <p class="text-xs text-warning-600 flex items-center gap-1">
+                        <span class="status-dot status-pending"></span>
+                        2 hours ago
+                    </p>
+                </div>
+            </div>
+            <div class="card p-4 flex items-center gap-3">
+                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14256b291-1764684278019.png" alt="Users icon" class="w-7 h-7">
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-text-primary">Active Users</p>
+                    <p class="text-xs text-primary-600">18 / 50 licenses</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabbed Interface -->
+        <section class="card">
+            <!-- Tab Navigation -->
+            <div class="border-b border-secondary-200 px-6 pt-6">
+                <nav class="flex gap-2" role="tablist" aria-label="Administration sections">
+                    <button class="tab-button active px-4 py-3 font-medium text-sm border-b-2 border-primary text-primary transition-smooth" 
+                            role="tab" 
+                            aria-selected="true" 
+                            aria-controls="user-management-panel"
+                            onclick="switchTab(event, 'user-management')">
+                        <div class="flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_115ffe0df-1764850200853.png" alt="User management icon" class="w-5 h-5">
+                            User Management
+                        </div>
+                    </button>
+                    <button class="tab-button px-4 py-3 font-medium text-sm border-b-2 border-transparent text-text-secondary hover:text-primary hover:border-secondary-200 transition-smooth" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="system-config-panel"
+                            onclick="switchTab(event, 'system-config')">
+                        <div class="flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f04f9c38-1764660632145.png" alt="System configuration icon" class="w-5 h-5">
+                            System Configuration
+                        </div>
+                    </button>
+                    <button class="tab-button px-4 py-3 font-medium text-sm border-b-2 border-transparent text-text-secondary hover:text-primary hover:border-secondary-200 transition-smooth" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="security-panel"
+                            onclick="switchTab(event, 'security')">
+                        <div class="flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ea16033d-1764659045894.png" alt="Security icon" class="w-5 h-5">
+                            Security & Audit
+                        </div>
+                    </button>
+                    <button class="tab-button px-4 py-3 font-medium text-sm border-b-2 border-transparent text-text-secondary hover:text-primary hover:border-secondary-200 transition-smooth" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="integrations-panel"
+                            onclick="switchTab(event, 'integrations')">
+                        <div class="flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_146a3b88b-1764931890811.png" alt="Integrations icon" class="w-5 h-5">
+                            Integrations
+                        </div>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Tab Panels -->
+            <div class="p-6">
+                <!-- User Management Panel -->
+                <div id="user-management-panel" class="tab-panel" role="tabpanel" aria-labelledby="user-management">
+                    <div class="mb-6 flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xl font-heading font-semibold text-primary mb-1">User Management</h3>
+                            <p class="text-sm text-text-secondary">Manage employee accounts, roles, and permissions</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="relative">
+                                <input type="text" 
+                                       placeholder="Search users..." 
+                                       class="input pl-10 pr-4 py-2 w-64"
+                                       aria-label="Search users">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_194eeb027-1764656322629.png" alt="Search icon" class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2">
+                            </div>
+                            <button class="btn btn-primary flex items-center gap-2" aria-label="Add new user">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1956f0c22-1764659033616.png" alt="Add user icon" class="w-5 h-5">
+                                Add User
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- User Table -->
+                    <div class="overflow-x-auto border border-secondary-200 rounded-lg">
+                        <table class="w-full">
+                            <thead class="bg-secondary-50 border-b border-secondary-200">
+                                <tr>
+                                    <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">User</th>
+                                    <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">Role</th>
+                                    <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">Department</th>
+                                    <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">Status</th>
+                                    <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">Last Login</th>
+                                    <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-surface divide-y divide-secondary-100">
+                                <tr class="hover:bg-secondary-50 transition-smooth">
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae0f3431-1763296290027.png" 
+                                                 alt="Amit Kumar profile photo" 
+                                                 class="w-10 h-10 rounded-full object-cover"
+                                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                            <div>
+                                                <p class="text-sm font-medium text-text-primary">Amit Kumar</p>
+                                                <p class="text-xs text-text-secondary">amit.kumar@khanakhazana.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <span class="badge badge-primary">Head Chef</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Kitchen</td>
+                                    <td class="px-4 py-4">
+                                        <span class="flex items-center gap-1 text-xs text-success-700">
+                                            <span class="status-dot status-active"></span>
+                                            Active
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Dec 8, 5:15 PM</td>
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="View permissions">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_190422886-1764742193614.png" alt="Permissions icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-secondary-50 transition-smooth">
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11f9dcd0a-1765181753328.png" 
+                                                 alt="Priya Singh profile photo" 
+                                                 class="w-10 h-10 rounded-full object-cover"
+                                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                            <div>
+                                                <p class="text-sm font-medium text-text-primary">Priya Singh</p>
+                                                <p class="text-xs text-text-secondary">priya.singh@khanakhazana.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <span class="badge badge-success">Senior Server</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Service</td>
+                                    <td class="px-4 py-4">
+                                        <span class="flex items-center gap-1 text-xs text-success-700">
+                                            <span class="status-dot status-active"></span>
+                                            Active
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Dec 8, 5:02 PM</td>
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="View permissions">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_190422886-1764742193614.png" alt="Permissions icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-secondary-50 transition-smooth">
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae0f3431-1763296290027.png" 
+                                                 alt="Rahul Verma profile photo" 
+                                                 class="w-10 h-10 rounded-full object-cover"
+                                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                            <div>
+                                                <p class="text-sm font-medium text-text-primary">Rahul Verma</p>
+                                                <p class="text-xs text-text-secondary">rahul.verma@khanakhazana.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <span class="badge badge-warning">Cashier</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Front Desk</td>
+                                    <td class="px-4 py-4">
+                                        <span class="flex items-center gap-1 text-xs text-warning-700">
+                                            <span class="status-dot status-pending"></span>
+                                            On Break
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Dec 8, 5:00 PM</td>
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="View permissions">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_190422886-1764742193614.png" alt="Permissions icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-secondary-50 transition-smooth">
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11f9dcd0a-1765181753328.png" 
+                                                 alt="Neha Gupta profile photo" 
+                                                 class="w-10 h-10 rounded-full object-cover"
+                                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                            <div>
+                                                <p class="text-sm font-medium text-text-primary">Neha Gupta</p>
+                                                <p class="text-xs text-text-secondary">neha.gupta@khanakhazana.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <span class="badge badge-success">Server</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Service</td>
+                                    <td class="px-4 py-4">
+                                        <span class="flex items-center gap-1 text-xs text-text-secondary">
+                                            <span class="status-dot status-inactive"></span>
+                                            Off Duty
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Dec 8, 2:30 PM</td>
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="View permissions">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_190422886-1764742193614.png" alt="Permissions icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-secondary-50 transition-smooth">
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_182b60a79-1763295221996.png" 
+                                                 alt="Rajesh Kumar profile photo" 
+                                                 class="w-10 h-10 rounded-full object-cover"
+                                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                            <div>
+                                                <p class="text-sm font-medium text-text-primary">Rajesh Kumar</p>
+                                                <p class="text-xs text-text-secondary">rajesh.kumar@khanakhazana.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4">
+                                        <span class="badge bg-accent text-white">Manager</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Management</td>
+                                    <td class="px-4 py-4">
+                                        <span class="flex items-center gap-1 text-xs text-success-700">
+                                            <span class="status-dot status-active"></span>
+                                            Active
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-text-secondary">Dec 8, 5:00 PM</td>
+                                    <td class="px-4 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="View permissions">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_190422886-1764742193614.png" alt="Permissions icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete user">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Role-Based Permissions Matrix -->
+                    <div class="mt-8">
+                        <h4 class="text-lg font-heading font-semibold text-primary mb-4">Role-Based Permissions</h4>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="card p-4">
+                                <div class="flex items-center justify-between mb-3">
+                                    <h5 class="font-semibold text-text-primary">Manager</h5>
+                                    <span class="badge bg-accent text-white">Full Access</span>
+                                </div>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        All menu operations
+                                    </li>
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        Order management
+                                    </li>
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        Staff management
+                                    </li>
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        Financial reports
+                                    </li>
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        System administration
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card p-4">
+                                <div class="flex items-center justify-between mb-3">
+                                    <h5 class="font-semibold text-text-primary">Head Chef</h5>
+                                    <span class="badge badge-primary">Kitchen Access</span>
+                                </div>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        View orders
+                                    </li>
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        Update order status
+                                    </li>
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        Inventory management
+                                    </li>
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        Recipe management
+                                    </li>
+                                    <li class="flex items-center gap-2 text-text-secondary">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16d77caa5-1764867139251.png" alt="Cross icon" class="w-4 h-4">
+                                        Financial access
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card p-4">
+                                <div class="flex items-center justify-between mb-3">
+                                    <h5 class="font-semibold text-text-primary">Server</h5>
+                                    <span class="badge badge-success">Service Access</span>
+                                </div>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        Take orders
+                                    </li>
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        View menu
+                                    </li>
+                                    <li class="flex items-center gap-2 text-success-700">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Checkmark icon" class="w-4 h-4">
+                                        Table management
+                                    </li>
+                                    <li class="flex items-center gap-2 text-text-secondary">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16d77caa5-1764867139251.png" alt="Cross icon" class="w-4 h-4">
+                                        Inventory access
+                                    </li>
+                                    <li class="flex items-center gap-2 text-text-secondary">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16d77caa5-1764867139251.png" alt="Cross icon" class="w-4 h-4">
+                                        Financial access
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Configuration Panel -->
+                <div id="system-config-panel" class="tab-panel hidden" role="tabpanel" aria-labelledby="system-config">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-heading font-semibold text-primary mb-1">System Configuration</h3>
+                        <p class="text-sm text-text-secondary">Configure restaurant settings, tax rates, and operational parameters</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Restaurant Settings -->
+                        <div class="card p-6">
+                            <h4 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_109bbb5bb-1764682193178.png" alt="Store icon" class="w-5 h-5">
+                                Restaurant Settings
+                            </h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Restaurant Name</label>
+                                    <input type="text" value="Khana Khazana" class="input" aria-label="Restaurant name">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Contact Email</label>
+                                    <input type="email" value="info@khanakhazana.com" class="input" aria-label="Contact email">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Phone Number</label>
+                                    <input type="tel" value="+1 (555) 123-4567" class="input" aria-label="Phone number">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Address</label>
+                                    <textarea class="input" rows="3" aria-label="Restaurant address">123 Main Street, Downtown, NY 10001</textarea>
+                                </div>
+                                <button class="btn btn-primary w-full">Save Changes</button>
+                            </div>
+                        </div>
+
+                        <!-- Tax Configuration -->
+                        <div class="card p-6">
+                            <h4 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                                <img src="https://images.unsplash.com/photo-1638281269990-8fbe0db9375e" alt="Percent icon" class="w-5 h-5">
+                                Tax Configuration
+                            </h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Sales Tax Rate (%)</label>
+                                    <input type="number" value="8.5" step="0.1" class="input" aria-label="Sales tax rate">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Service Charge (%)</label>
+                                    <input type="number" value="10" step="0.1" class="input" aria-label="Service charge">
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input type="checkbox" id="auto-gratuity" checked class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary">
+                                    <label for="auto-gratuity" class="text-sm text-text-primary">Enable automatic gratuity for groups of 6+</label>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Gratuity Rate (%)</label>
+                                    <input type="number" value="18" step="0.1" class="input" aria-label="Gratuity rate">
+                                </div>
+                                <button class="btn btn-primary w-full">Update Tax Settings</button>
+                            </div>
+                        </div>
+
+                        <!-- Operating Hours -->
+                        <div class="card p-6">
+                            <h4 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c9d2cafb-1764674598571.png" alt="Clock icon" class="w-5 h-5">
+                                Operating Hours
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-3 bg-secondary-50 rounded">
+                                    <span class="text-sm font-medium text-text-primary">Monday - Friday</span>
+                                    <span class="text-sm text-text-secondary">11:00 AM - 10:00 PM</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-secondary-50 rounded">
+                                    <span class="text-sm font-medium text-text-primary">Saturday</span>
+                                    <span class="text-sm text-text-secondary">10:00 AM - 11:00 PM</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-secondary-50 rounded">
+                                    <span class="text-sm font-medium text-text-primary">Sunday</span>
+                                    <span class="text-sm text-text-secondary">10:00 AM - 9:00 PM</span>
+                                </div>
+                                <button class="btn btn-outline w-full">Edit Hours</button>
+                            </div>
+                        </div>
+
+                        <!-- Payment Processing -->
+                        <div class="card p-6">
+                            <h4 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_168c2a434-1764700746155.png" alt="Credit card icon" class="w-5 h-5">
+                                Payment Processing
+                            </h4>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-3 bg-success-50 rounded border border-success-200">
+                                    <div class="flex items-center gap-2">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Success checkmark icon" class="w-5 h-5">
+                                        <span class="text-sm font-medium text-text-primary">Credit/Debit Cards</span>
+                                    </div>
+                                    <span class="text-xs text-success-700">Active</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-success-50 rounded border border-success-200">
+                                    <div class="flex items-center gap-2">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Success checkmark icon" class="w-5 h-5">
+                                        <span class="text-sm font-medium text-text-primary">Cash Payments</span>
+                                    </div>
+                                    <span class="text-xs text-success-700">Active</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-success-50 rounded border border-success-200">
+                                    <div class="flex items-center gap-2">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Success checkmark icon" class="w-5 h-5">
+                                        <span class="text-sm font-medium text-text-primary">Digital Wallets</span>
+                                    </div>
+                                    <span class="text-xs text-success-700">Active</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-secondary-50 rounded border border-secondary-200">
+                                    <div class="flex items-center gap-2">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_18429f93e-1765219369922.png" alt="Inactive icon" class="w-5 h-5">
+                                        <span class="text-sm font-medium text-text-primary">Gift Cards</span>
+                                    </div>
+                                    <span class="text-xs text-text-secondary">Inactive</span>
+                                </div>
+                                <button class="btn btn-outline w-full">Configure Payment Methods</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security & Audit Panel -->
+                <div id="security-panel" class="tab-panel hidden" role="tabpanel" aria-labelledby="security">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-heading font-semibold text-primary mb-1">Security & Audit</h3>
+                        <p class="text-sm text-text-secondary">Monitor system security, access logs, and audit trails</p>
+                    </div>
+
+                    <!-- Security Dashboard -->
+                    <div class="grid grid-cols-4 gap-4 mb-6">
+                        <div class="card p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1258bb2b6-1764882730596.png" alt="Shield check icon" class="w-8 h-8">
+                                <span class="badge badge-success">Secure</span>
+                            </div>
+                            <p class="text-2xl font-bold text-text-primary mb-1">0</p>
+                            <p class="text-xs text-text-secondary">Security Threats</p>
+                        </div>
+                        <div class="card p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12967e98b-1764656312241.png" alt="Login icon" class="w-8 h-8">
+                                <span class="badge badge-primary">Today</span>
+                            </div>
+                            <p class="text-2xl font-bold text-text-primary mb-1">127</p>
+                            <p class="text-xs text-text-secondary">Login Attempts</p>
+                        </div>
+                        <div class="card p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14e5a09c7-1764744760577.png" alt="Account alert icon" class="w-8 h-8">
+                                <span class="badge badge-warning">Review</span>
+                            </div>
+                            <p class="text-2xl font-bold text-text-primary mb-1">3</p>
+                            <p class="text-xs text-text-secondary">Failed Logins</p>
+                        </div>
+                        <div class="card p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1345ab164-1764709033122.png" alt="Document edit icon" class="w-8 h-8">
+                                <span class="badge badge-primary">24h</span>
+                            </div>
+                            <p class="text-2xl font-bold text-text-primary mb-1">1,247</p>
+                            <p class="text-xs text-text-secondary">Audit Entries</p>
+                        </div>
+                    </div>
+
+                    <!-- Recent Security Events -->
+                    <div class="card p-6 mb-6">
+                        <h4 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_155454e2c-1764929109627.png" alt="Alert icon" class="w-5 h-5">
+                            Recent Security Events
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3 p-3 bg-warning-50 rounded border border-warning-200">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1485fe06b-1764740848213.png" alt="Warning icon" class="w-5 h-5 mt-0.5">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-text-primary">Failed login attempt</p>
+                                    <p class="text-xs text-text-secondary">User: unknown@email.com • IP: 192.168.1.45 • Dec 8, 6:15 PM</p>
+                                </div>
+                                <button class="text-xs text-warning-700 font-medium hover:underline">Investigate</button>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-success-50 rounded border border-success-200">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Success icon" class="w-5 h-5 mt-0.5">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-text-primary">Password changed successfully</p>
+                                    <p class="text-xs text-text-secondary">User: priya.singh@khanakhazana.com • Dec 8, 5:45 PM</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-success-50 rounded border border-success-200">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10fe7876e-1764634748697.png" alt="Success icon" class="w-5 h-5 mt-0.5">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-text-primary">New user account created</p>
+                                    <p class="text-xs text-text-secondary">User: sarah.johnson@khanakhazana.com • Created by: Rajesh Kumar • Dec 8, 4:30 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audit Log -->
+                    <div class="card p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-lg font-heading font-semibold text-primary flex items-center gap-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13fe62dd4-1764679616330.png" alt="History icon" class="w-5 h-5">
+                                Audit Log
+                            </h4>
+                            <div class="flex items-center gap-2">
+                                <select class="input py-1 text-sm" aria-label="Filter audit log">
+                                    <option>All Actions</option>
+                                    <option>User Management</option>
+                                    <option>Order Changes</option>
+                                    <option>Menu Updates</option>
+                                    <option>System Config</option>
+                                </select>
+                                <button class="btn btn-outline py-1 text-sm">Export Log</button>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto border border-secondary-200 rounded-lg">
+                            <table class="w-full">
+                                <thead class="bg-secondary-50 border-b border-secondary-200">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">Timestamp</th>
+                                        <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">User</th>
+                                        <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">Action</th>
+                                        <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">Details</th>
+                                        <th class="px-4 py-3 text-left text-xs font-semibold text-text-primary uppercase tracking-wider">IP Address</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-surface divide-y divide-secondary-100">
+                                    <tr class="hover:bg-secondary-50 transition-smooth">
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">Dec 8, 6:15 PM</td>
+                                        <td class="px-4 py-3 text-sm text-text-primary">Rajesh Kumar</td>
+                                        <td class="px-4 py-3">
+                                            <span class="badge badge-primary">User Created</span>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary">Created account for Sarah Johnson</td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">192.168.1.10</td>
+                                    </tr>
+                                    <tr class="hover:bg-secondary-50 transition-smooth">
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">Dec 8, 5:45 PM</td>
+                                        <td class="px-4 py-3 text-sm text-text-primary">Priya Singh</td>
+                                        <td class="px-4 py-3">
+                                            <span class="badge badge-warning">Password Changed</span>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary">Updated account password</td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">192.168.1.22</td>
+                                    </tr>
+                                    <tr class="hover:bg-secondary-50 transition-smooth">
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">Dec 8, 5:30 PM</td>
+                                        <td class="px-4 py-3 text-sm text-text-primary">Amit Kumar</td>
+                                        <td class="px-4 py-3">
+                                            <span class="badge badge-success">Menu Updated</span>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary">Modified Butter Chicken price to $16.99</td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">192.168.1.15</td>
+                                    </tr>
+                                    <tr class="hover:bg-secondary-50 transition-smooth">
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">Dec 8, 5:15 PM</td>
+                                        <td class="px-4 py-3 text-sm text-text-primary">Rajesh Kumar</td>
+                                        <td class="px-4 py-3">
+                                            <span class="badge bg-accent text-white">System Config</span>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary">Updated tax rate to 8.5%</td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">192.168.1.10</td>
+                                    </tr>
+                                    <tr class="hover:bg-secondary-50 transition-smooth">
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">Dec 8, 5:00 PM</td>
+                                        <td class="px-4 py-3 text-sm text-text-primary">Rahul Verma</td>
+                                        <td class="px-4 py-3">
+                                            <span class="badge badge-success">Login</span>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary">Successful login</td>
+                                        <td class="px-4 py-3 text-sm text-text-secondary font-mono">192.168.1.18</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Integrations Panel -->
+                <div id="integrations-panel" class="tab-panel hidden" role="tabpanel" aria-labelledby="integrations">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-heading font-semibold text-primary mb-1">System Integrations</h3>
+                        <p class="text-sm text-text-secondary">Monitor and configure third-party integrations and API connections</p>
+                    </div>
+
+                    <!-- Integration Status Grid -->
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <div class="card p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13f3e75ea-1764693349552.png" alt="POS icon" class="w-7 h-7">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-text-primary">POS System</h4>
+                                        <p class="text-xs text-text-secondary">Square POS Integration</p>
+                                    </div>
+                                </div>
+                                <span class="flex items-center gap-1 text-xs text-success-700">
+                                    <span class="status-dot status-active"></span>
+                                    Connected
+                                </span>
+                            </div>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Last Sync:</span>
+                                    <span class="text-text-primary font-medium">2 minutes ago</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">API Version:</span>
+                                    <span class="text-text-primary font-medium">v2.1</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Transactions Today:</span>
+                                    <span class="text-text-primary font-medium">87</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-outline flex-1 text-sm py-2">Test Connection</button>
+                                <button class="btn btn-primary flex-1 text-sm py-2">Configure</button>
+                            </div>
+                        </div>
+
+                        <div class="card p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_168c2a434-1764700746155.png" alt="Payment icon" class="w-7 h-7">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-text-primary">Payment Gateway</h4>
+                                        <p class="text-xs text-text-secondary">Stripe Payment Processing</p>
+                                    </div>
+                                </div>
+                                <span class="flex items-center gap-1 text-xs text-success-700">
+                                    <span class="status-dot status-active"></span>
+                                    Online
+                                </span>
+                            </div>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Last Transaction:</span>
+                                    <span class="text-text-primary font-medium">5 minutes ago</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">API Version:</span>
+                                    <span class="text-text-primary font-medium">2023-10-16</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Success Rate:</span>
+                                    <span class="text-text-primary font-medium">99.2%</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-outline flex-1 text-sm py-2">Test Connection</button>
+                                <button class="btn btn-primary flex-1 text-sm py-2">Configure</button>
+                            </div>
+                        </div>
+
+                        <div class="card p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10301e7cd-1764657439853.png" alt="Kitchen display icon" class="w-7 h-7">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-text-primary">Kitchen Display System</h4>
+                                        <p class="text-xs text-text-secondary">Real-time Order Display</p>
+                                    </div>
+                                </div>
+                                <span class="flex items-center gap-1 text-xs text-success-700">
+                                    <span class="status-dot status-active"></span>
+                                    Synced
+                                </span>
+                            </div>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Active Displays:</span>
+                                    <span class="text-text-primary font-medium">3 screens</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Last Update:</span>
+                                    <span class="text-text-primary font-medium">Just now</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Pending Orders:</span>
+                                    <span class="text-text-primary font-medium">12</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-outline flex-1 text-sm py-2">View Displays</button>
+                                <button class="btn btn-primary flex-1 text-sm py-2">Configure</button>
+                            </div>
+                        </div>
+
+                        <div class="card p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-warning-100 rounded-lg flex items-center justify-center">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1e3c5c396-1764752922520.png" alt="Email icon" class="w-7 h-7">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-text-primary">Email Service</h4>
+                                        <p class="text-xs text-text-secondary">SendGrid SMTP</p>
+                                    </div>
+                                </div>
+                                <span class="flex items-center gap-1 text-xs text-warning-700">
+                                    <span class="status-dot status-pending"></span>
+                                    Limited
+                                </span>
+                            </div>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Emails Sent Today:</span>
+                                    <span class="text-text-primary font-medium">45 / 100</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Delivery Rate:</span>
+                                    <span class="text-text-primary font-medium">98.5%</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">API Status:</span>
+                                    <span class="text-text-primary font-medium">Operational</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-outline flex-1 text-sm py-2">Send Test</button>
+                                <button class="btn btn-primary flex-1 text-sm py-2">Configure</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Documentation -->
+                    <div class="card p-6">
+                        <h4 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_146a3b88b-1764931890811.png" alt="API icon" class="w-5 h-5">
+                            API Documentation & Keys
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-secondary-50 rounded-lg border border-secondary-200">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h5 class="font-semibold text-text-primary">Production API Key</h5>
+                                    <span class="badge badge-success">Active</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input type="password" value="sk_live_xxxxxxxxxxxxxxxxxxxxxxxx" class="input flex-1 font-mono text-sm" readonly aria-label="Production API key">
+                                    <button class="btn btn-outline py-2 px-3" aria-label="Copy API key">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ebca2698-1764678945163.png" alt="Copy icon" class="w-4 h-4">
+                                    </button>
+                                </div>
+                                <p class="text-xs text-text-secondary mt-2">Created: Nov 15, 2025 • Last used: Dec 8, 2025</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button class="btn btn-outline flex items-center gap-2">
+                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14e3c0cba-1764698681198.png" alt="Documentation icon" class="w-4 h-4">
+                                    View API Documentation
+                                </button>
+                                <button class="btn btn-outline flex items-center gap-2">
+                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fb7f603b-1764656321843.png" alt="Add key icon" class="w-4 h-4">
+                                    Generate New Key
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Backup Management -->
+        <section class="grid grid-cols-2 gap-6 mt-6">
+            <div class="card p-6">
+                <h3 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b9ac1331-1764694928601.png" alt="Backup icon" class="w-5 h-5">
+                    Backup Management
+                </h3>
+                <div class="space-y-3 mb-4">
+                    <div class="flex items-center justify-between p-3 bg-success-50 rounded border border-success-200">
+                        <div>
+                            <p class="text-sm font-medium text-text-primary">Last Successful Backup</p>
+                            <p class="text-xs text-text-secondary">Dec 8, 2025 at 4:00 PM</p>
+                        </div>
+                        <span class="badge badge-success">Complete</span>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-secondary-50 rounded border border-secondary-200">
+                        <div>
+                            <p class="text-sm font-medium text-text-primary">Next Scheduled Backup</p>
+                            <p class="text-xs text-text-secondary">Dec 9, 2025 at 4:00 AM</p>
+                        </div>
+                        <span class="badge badge-primary">Scheduled</span>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-secondary-50 rounded border border-secondary-200">
+                        <div>
+                            <p class="text-sm font-medium text-text-primary">Backup Retention</p>
+                            <p class="text-xs text-text-secondary">30 days (automatic cleanup)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <button class="btn btn-primary flex-1">Create Backup Now</button>
+                    <button class="btn btn-outline flex-1">Restore from Backup</button>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <h3 class="text-lg font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_181d7de48-1764925488526.png" alt="License icon" class="w-5 h-5">
+                    License & Subscription
+                </h3>
+                <div class="space-y-3 mb-4">
+                    <div class="flex items-center justify-between p-3 bg-primary-50 rounded border border-primary-200">
+                        <div>
+                            <p class="text-sm font-medium text-text-primary">Plan Type</p>
+                            <p class="text-xs text-text-secondary">Professional Plan</p>
+                        </div>
+                        <span class="badge bg-accent text-white">Active</span>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-secondary-50 rounded border border-secondary-200">
+                        <div>
+                            <p class="text-sm font-medium text-text-primary">User Licenses</p>
+                            <p class="text-xs text-text-secondary">18 of 50 licenses used</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-secondary-50 rounded border border-secondary-200">
+                        <div>
+                            <p class="text-sm font-medium text-text-primary">Renewal Date</p>
+                            <p class="text-xs text-text-secondary">March 15, 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <button class="btn btn-outline flex-1">Upgrade Plan</button>
+                    <button class="btn btn-outline flex-1">Manage Billing</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-secondary-200 mt-12 py-6 px-6">
+        <div class="flex items-center justify-between">
+            <p class="text-sm text-text-secondary">© 2025 Khana Khazana Manager. All Rights Reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="javascript:void(0)" class="text-sm text-text-secondary hover:text-primary transition-smooth">Help & Support</a>
+                <a href="javascript:void(0)" class="text-sm text-text-secondary hover:text-primary transition-smooth">System Status</a>
+                <a href="javascript:void(0)" class="text-sm text-text-secondary hover:text-primary transition-smooth">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tab Switching Script -->
+    <script>
+        function switchTab(event, tabName) {
+            // Hide all tab panels
+            const tabPanels = document.querySelectorAll('.tab-panel');
+            tabPanels.forEach(panel => {
+                panel.classList.add('hidden');
+            });
+
+            // Remove active state from all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active', 'border-primary', 'text-primary');
+                button.classList.add('border-transparent', 'text-text-secondary');
+                button.setAttribute('aria-selected', 'false');
+            });
+
+            // Show selected tab panel
+            const selectedPanel = document.getElementById(tabName + '-panel');
+            if (selectedPanel) {
+                selectedPanel.classList.remove('hidden');
+            }
+
+            // Add active state to clicked tab button
+            event.currentTarget.classList.add('active', 'border-primary', 'text-primary');
+            event.currentTarget.classList.remove('border-transparent', 'text-text-secondary');
+            event.currentTarget.setAttribute('aria-selected', 'true');
+
+            // Update icon colors
+            const icon = event.currentTarget.querySelector('img');
+            if (icon) {
+                const iconSrc = icon.src;
+                if (iconSrc.includes('color=%236B4E3D')) {
+                    icon.src = iconSrc.replace('color=%236B4E3D', 'color=%238B4513');
+                }
+            }
+
+            // Reset other icons
+            tabButtons.forEach(button => {
+                if (button !== event.currentTarget) {
+                    const otherIcon = button.querySelector('img');
+                    if (otherIcon) {
+                        const otherIconSrc = otherIcon.src;
+                        if (otherIconSrc.includes('color=%238B4513')) {
+                            otherIcon.src = otherIconSrc.replace('color=%238B4513', 'color=%236B4E3D');
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

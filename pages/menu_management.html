@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khana Khazana Manager - Comprehensive menu administration with pricing optimization, recipe management, and real-time inventory integration">
+    <title>Menu Management - Khana Khazana Manager</title>
+    <link rel="stylesheet" href="../css/main.css">
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fkhanakhaz6133back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.10"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Fixed Header -->
+    <header class="bg-surface border-b border-secondary-200 shadow-warm fixed top-0 left-0 right-0 z-50">
+        <div class="px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Brand -->
+                <div class="flex items-center gap-4">
+                    <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" fill="#8B4513"/>
+                        <path d="M20 8C15.5817 8 12 11.5817 12 16C12 18.2091 12.8954 20.2091 14.3431 21.6569L20 27.3137L25.6569 21.6569C27.1046 20.2091 28 18.2091 28 16C28 11.5817 24.4183 8 20 8Z" fill="#FF6B35"/>
+                        <circle cx="20" cy="16" r="3" fill="#FFFFFF"/>
+                        <path d="M14 28H26C26.5523 28 27 28.4477 27 29V30C27 30.5523 26.5523 31 26 31H14C13.4477 31 13 30.5523 13 30V29C13 28.4477 13.4477 28 14 28Z" fill="#D2691E"/>
+                    </svg>
+                    <div>
+                        <h1 class="text-xl font-heading font-semibold text-primary">Khana Khazana Manager</h1>
+                        <p class="text-xs text-text-secondary">Menu Administration Center</p>
+                    </div>
+                </div>
+
+                <!-- Current Shift Status -->
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 px-4 py-2 bg-success-50 rounded-lg border border-success-200">
+                        <span class="status-dot status-active"></span>
+                        <div class="text-sm">
+                            <p class="font-medium text-success-800">Evening Shift Active</p>
+                            <p class="text-xs text-success-600">Started: 5:00 PM</p>
+                        </div>
+                    </div>
+
+                    <!-- User Role Badge -->
+                    <div class="flex items-center gap-3 px-4 py-2 bg-primary-50 rounded-lg border border-primary-200">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_170fbb2da-1763293178948.png" 
+                             alt="Manager profile photo" 
+                             class="w-10 h-10 rounded-full object-cover border-2 border-primary"
+                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div>
+                            <p class="text-sm font-medium text-primary-900">Rajesh Kumar</p>
+                            <p class="text-xs text-primary-600">Restaurant Manager</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <button class="btn btn-accent flex items-center gap-2" aria-label="Print menu">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d4fc0a93-1765173532031.png" alt="Printer icon" class="w-5 h-5">
+                        Print Menu
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="mt-4 border-t border-secondary-100 pt-3" role="navigation" aria-label="Main navigation">
+                <ul class="flex items-center gap-1">
+                    <li>
+                        <a href="dashboard_overview.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12ea66b18-1764881903999.png" alt="Dashboard icon" class="w-5 h-5">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu_management.html" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1bd13d883-1764678164691.png" alt="Menu icon" class="w-5 h-5">
+                            Menu
+                        </a>
+                    </li>
+                    <li>
+                        <a href="order_processing.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c13375db-1764650244021.png" alt="Orders icon" class="w-5 h-5">
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customer_database.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14256b291-1764684278019.png" alt="Customers icon" class="w-5 h-5">
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table_management.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_108dc3086-1764989499144.png" alt="Tables icon" class="w-5 h-5">
+                            Tables
+                        </a>
+                    </li>
+                    <li>
+                        <a href="system_administration.html" class="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-secondary-50 rounded-lg font-medium transition-smooth">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13190f263-1765219370302.png" alt="Settings icon" class="w-5 h-5">
+                            Admin
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="pt-40 px-6 pb-8">
+        <!-- Advanced Filtering Toolbar -->
+        <section class="mb-6 bg-surface rounded-lg shadow-warm p-4 border border-secondary-100">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-heading font-semibold text-primary flex items-center gap-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_115e7441e-1764657450428.png" alt="Filter icon" class="w-5 h-5">
+                    Advanced Filters
+                </h2>
+                <div class="flex items-center gap-2">
+                    <button class="btn btn-outline text-sm flex items-center gap-2" aria-label="Reset filters">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c1def8ee-1765129193693.png" alt="Reset icon" class="w-4 h-4">
+                        Reset
+                    </button>
+                    <button class="btn btn-primary text-sm flex items-center gap-2" aria-label="Add new menu item">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_133f61ccb-1764650954595.png" alt="Add icon" class="w-4 h-4">
+                        Add Item
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-5 gap-3">
+                <!-- Search Input -->
+                <div class="col-span-2">
+                    <label for="search-menu" class="block text-xs font-medium text-text-secondary mb-1">Search Menu Items</label>
+                    <div class="relative">
+                        <input type="text" id="search-menu" placeholder="Search by name, ingredients..." 
+                               class="input pl-10 text-sm" aria-label="Search menu items">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_194eeb027-1764656322629.png" alt="Search icon" 
+                             class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2">
+                    </div>
+                </div>
+
+                <!-- Category Filter -->
+                <div>
+                    <label for="filter-category" class="block text-xs font-medium text-text-secondary mb-1">Category</label>
+                    <select id="filter-category" class="input text-sm" aria-label="Filter by category">
+                        <option value="">All Categories</option>
+                        <option value="appetizers">Appetizers</option>
+                        <option value="main-course">Main Course</option>
+                        <option value="breads">Breads</option>
+                        <option value="beverages">Beverages</option>
+                        <option value="desserts">Desserts</option>
+                    </select>
+                </div>
+
+                <!-- Dietary Filter -->
+                <div>
+                    <label for="filter-dietary" class="block text-xs font-medium text-text-secondary mb-1">Dietary</label>
+                    <select id="filter-dietary" class="input text-sm" aria-label="Filter by dietary restrictions">
+                        <option value="">All Items</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="dairy-free">Dairy-Free</option>
+                    </select>
+                </div>
+
+                <!-- Availability Filter -->
+                <div>
+                    <label for="filter-availability" class="block text-xs font-medium text-text-secondary mb-1">Availability</label>
+                    <select id="filter-availability" class="input text-sm" aria-label="Filter by availability status">
+                        <option value="">All Status</option>
+                        <option value="available">Available</option>
+                        <option value="unavailable">Unavailable</option>
+                        <option value="seasonal">Seasonal</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Bulk Operations Bar -->
+            <div class="mt-4 pt-4 border-t border-secondary-100 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="select-all" class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary" aria-label="Select all items">
+                    <label for="select-all" class="text-sm text-text-secondary">Select All (0 selected)</label>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button class="btn btn-outline text-sm flex items-center gap-2" disabled aria-label="Bulk price update">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13da08364-1765176452419.png" alt="Price icon" class="w-4 h-4">
+                        Update Prices
+                    </button>
+                    <button class="btn btn-outline text-sm flex items-center gap-2" disabled aria-label="Bulk category change">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1e903ed95-1764659047759.png" alt="Move icon" class="w-4 h-4">
+                        Change Category
+                    </button>
+                    <button class="btn btn-outline text-sm flex items-center gap-2" disabled aria-label="Bulk availability toggle">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d988c9a0-1765085810303.png" alt="Toggle icon" class="w-4 h-4">
+                        Toggle Availability
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Three-Panel Layout -->
+        <div class="grid grid-cols-12 gap-6">
+            <!-- Left Sidebar: Category Tree (25%) -->
+            <aside class="col-span-3 space-y-4" id="category-sidebar">
+                <div class="card p-4">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-base font-heading font-semibold text-primary">Menu Categories</h3>
+                        <button class="text-primary hover:text-primary-700 transition-smooth" aria-label="Add category">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_133f61ccb-1764650954595.png" alt="Add icon" class="w-5 h-5">
+                        </button>
+                    </div>
+
+                    <!-- Category Tree -->
+                    <div class="space-y-2">
+                        <!-- Appetizers -->
+                        <div class="border border-primary-200 bg-primary-50 rounded-lg p-3 cursor-pointer transition-smooth hover:shadow-warm-md">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12f68bb70-1764828052058.png" alt="Appetizers icon" class="w-5 h-5">
+                                    <span class="text-sm font-medium text-primary-900">Appetizers</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="badge badge-primary text-xs">12</span>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" checked class="sr-only peer" aria-label="Toggle appetizers availability">
+                                        <div class="w-9 h-5 bg-success rounded-full peer peer-checked:bg-success"></div>
+                                        <div class="absolute left-0.5 top-0.5 bg-white w-4 h-4 rounded-full transition-all peer-checked:translate-x-4"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Course -->
+                        <div class="border border-secondary-200 rounded-lg p-3 cursor-pointer transition-smooth hover:shadow-warm-md hover:bg-secondary-50">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16794bf3b-1764774569527.png" alt="Main course icon" class="w-5 h-5">
+                                    <span class="text-sm font-medium text-text-primary">Main Course</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="badge bg-secondary-100 text-secondary-800 text-xs">28</span>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" checked class="sr-only peer" aria-label="Toggle main course availability">
+                                        <div class="w-9 h-5 bg-success rounded-full peer peer-checked:bg-success"></div>
+                                        <div class="absolute left-0.5 top-0.5 bg-white w-4 h-4 rounded-full transition-all peer-checked:translate-x-4"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Breads -->
+                        <div class="border border-secondary-200 rounded-lg p-3 cursor-pointer transition-smooth hover:shadow-warm-md hover:bg-secondary-50">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_158814ece-1765135162178.png" alt="Breads icon" class="w-5 h-5">
+                                    <span class="text-sm font-medium text-text-primary">Breads</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="badge bg-secondary-100 text-secondary-800 text-xs">8</span>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" checked class="sr-only peer" aria-label="Toggle breads availability">
+                                        <div class="w-9 h-5 bg-success rounded-full peer peer-checked:bg-success"></div>
+                                        <div class="absolute left-0.5 top-0.5 bg-white w-4 h-4 rounded-full transition-all peer-checked:translate-x-4"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Beverages -->
+                        <div class="border border-secondary-200 rounded-lg p-3 cursor-pointer transition-smooth hover:shadow-warm-md hover:bg-secondary-50">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14bf388e7-1764828061023.png" alt="Beverages icon" class="w-5 h-5">
+                                    <span class="text-sm font-medium text-text-primary">Beverages</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="badge bg-secondary-100 text-secondary-800 text-xs">15</span>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" checked class="sr-only peer" aria-label="Toggle beverages availability">
+                                        <div class="w-9 h-5 bg-success rounded-full peer peer-checked:bg-success"></div>
+                                        <div class="absolute left-0.5 top-0.5 bg-white w-4 h-4 rounded-full transition-all peer-checked:translate-x-4"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Desserts -->
+                        <div class="border border-secondary-200 rounded-lg p-3 cursor-pointer transition-smooth hover:shadow-warm-md hover:bg-secondary-50">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1300fdaaa-1764828063921.png" alt="Desserts icon" class="w-5 h-5">
+                                    <span class="text-sm font-medium text-text-primary">Desserts</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="badge bg-secondary-100 text-secondary-800 text-xs">10</span>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" checked class="sr-only peer" aria-label="Toggle desserts availability">
+                                        <div class="w-9 h-5 bg-success rounded-full peer peer-checked:bg-success"></div>
+                                        <div class="absolute left-0.5 top-0.5 bg-white w-4 h-4 rounded-full transition-all peer-checked:translate-x-4"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="card p-4">
+                    <h3 class="text-base font-heading font-semibold text-primary mb-3">Menu Statistics</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Total Items</span>
+                            <span class="text-sm font-semibold text-primary">73</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Available</span>
+                            <span class="text-sm font-semibold text-success">68</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Unavailable</span>
+                            <span class="text-sm font-semibold text-error">5</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Avg Price</span>
+                            <span class="text-sm font-semibold text-accent">$12.50</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center Panel: Menu Grid (50%) -->
+            <section class="col-span-6" id="menu-grid">
+                <div class="card p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-heading font-semibold text-primary">Menu Items</h2>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-text-secondary">Showing 73 items</span>
+                            <select class="input text-sm py-1 px-2" aria-label="Sort menu items">
+                                <option value="name">Sort by Name</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="popularity">Popularity</option>
+                                <option value="profit">Profit Margin</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Menu Items Grid -->
+                    <div class="space-y-3 max-h-[calc(100vh-320px)] overflow-y-auto pr-2">
+                        <!-- Menu Item 1: Butter Chicken -->
+                        <div class="border border-secondary-200 rounded-lg p-4 transition-smooth hover:shadow-warm-md hover:border-primary-300 cursor-pointer bg-primary-50 border-primary-300">
+                            <div class="flex items-start gap-4">
+                                <div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1721815967994-cae8b077191d" 
+                                         alt="Butter Chicken dish with creamy tomato sauce and garnish" 
+                                         class="w-full h-full object-cover"
+                                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                    <div class="absolute top-1 right-1">
+                                        <span class="badge badge-success text-xs">Available</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <h3 class="text-base font-semibold text-primary mb-1">Butter Chicken</h3>
+                                            <p class="text-xs text-text-secondary">Tender chicken in creamy tomato sauce with aromatic spices</p>
+                                        </div>
+                                        <input type="checkbox" class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary" aria-label="Select Butter Chicken">
+                                    </div>
+
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15d9e7448-1764657835987.png" alt="Category icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">Main Course</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_139df90a2-1765188555609.png" alt="Preparation time icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">25 min</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ba67ef4a-1764666329076.png" alt="Spicy indicator icon" class="w-4 h-4">
+                                            <span class="text-xs text-error">Medium Spicy</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Price</p>
+                                                <p class="text-lg font-bold text-accent">$14.99</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Cost</p>
+                                                <p class="text-sm font-semibold text-text-primary">$5.20</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Margin</p>
+                                                <p class="text-sm font-semibold text-success">65%</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit Butter Chicken">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete Butter Chicken">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 2: Paneer Tikka -->
+                        <div class="border border-secondary-200 rounded-lg p-4 transition-smooth hover:shadow-warm-md hover:border-primary-300 cursor-pointer">
+                            <div class="flex items-start gap-4">
+                                <div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1521912598745-9463aa86c016" 
+                                         alt="Paneer Tikka skewers with grilled cottage cheese and vegetables" 
+                                         class="w-full h-full object-cover"
+                                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                    <div class="absolute top-1 right-1">
+                                        <span class="badge badge-success text-xs">Available</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <h3 class="text-base font-semibold text-text-primary mb-1">Paneer Tikka</h3>
+                                            <p class="text-xs text-text-secondary">Grilled cottage cheese marinated in spices • Vegetarian</p>
+                                        </div>
+                                        <input type="checkbox" class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary" aria-label="Select Paneer Tikka">
+                                    </div>
+
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15d9e7448-1764657835987.png" alt="Category icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">Appetizers</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_139df90a2-1765188555609.png" alt="Preparation time icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">20 min</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1656a704b-1764666329043.png" alt="Vegetarian icon" class="w-4 h-4">
+                                            <span class="text-xs text-success">Vegetarian</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Price</p>
+                                                <p class="text-lg font-bold text-accent">$11.99</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Cost</p>
+                                                <p class="text-sm font-semibold text-text-primary">$4.50</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Margin</p>
+                                                <p class="text-sm font-semibold text-success">62%</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit Paneer Tikka">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete Paneer Tikka">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 3: Biryani (Veg) -->
+                        <div class="border border-secondary-200 rounded-lg p-4 transition-smooth hover:shadow-warm-md hover:border-primary-300 cursor-pointer">
+                            <div class="flex items-start gap-4">
+                                <div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1702703194519-6eb5a65531bf" 
+                                         alt="Vegetable Biryani with aromatic basmati rice and mixed vegetables" 
+                                         class="w-full h-full object-cover"
+                                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                    <div class="absolute top-1 right-1">
+                                        <span class="badge badge-success text-xs">Available</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <h3 class="text-base font-semibold text-text-primary mb-1">Biryani (Veg)</h3>
+                                            <p class="text-xs text-text-secondary">Aromatic basmati rice with mixed vegetables and spices</p>
+                                        </div>
+                                        <input type="checkbox" class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary" aria-label="Select Vegetable Biryani">
+                                    </div>
+
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15d9e7448-1764657835987.png" alt="Category icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">Main Course</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_139df90a2-1765188555609.png" alt="Preparation time icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">30 min</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1656a704b-1764666329043.png" alt="Vegetarian icon" class="w-4 h-4">
+                                            <span class="text-xs text-success">Vegetarian</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Price</p>
+                                                <p class="text-lg font-bold text-accent">$13.99</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Cost</p>
+                                                <p class="text-sm font-semibold text-text-primary">$4.80</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Margin</p>
+                                                <p class="text-sm font-semibold text-success">66%</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit Vegetable Biryani">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete Vegetable Biryani">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 4: Tandoori Chicken -->
+                        <div class="border border-secondary-200 rounded-lg p-4 transition-smooth hover:shadow-warm-md hover:border-primary-300 cursor-pointer">
+                            <div class="flex items-start gap-4">
+                                <div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1696950169952-6047637f448e" 
+                                         alt="Tandoori Chicken with charred exterior and yogurt marinade" 
+                                         class="w-full h-full object-cover"
+                                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                    <div class="absolute top-1 right-1">
+                                        <span class="badge badge-success text-xs">Available</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <h3 class="text-base font-semibold text-text-primary mb-1">Tandoori Chicken</h3>
+                                            <p class="text-xs text-text-secondary">Clay oven roasted chicken with yogurt and spice marinade</p>
+                                        </div>
+                                        <input type="checkbox" class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary" aria-label="Select Tandoori Chicken">
+                                    </div>
+
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15d9e7448-1764657835987.png" alt="Category icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">Main Course</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_139df90a2-1765188555609.png" alt="Preparation time icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">35 min</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ba67ef4a-1764666329076.png" alt="Spicy indicator icon" class="w-4 h-4">
+                                            <span class="text-xs text-error">Mild Spicy</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Price</p>
+                                                <p class="text-lg font-bold text-accent">$15.99</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Cost</p>
+                                                <p class="text-sm font-semibold text-text-primary">$5.80</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Margin</p>
+                                                <p class="text-sm font-semibold text-success">64%</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit Tandoori Chicken">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete Tandoori Chicken">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 5: Naan (Plain) -->
+                        <div class="border border-secondary-200 rounded-lg p-4 transition-smooth hover:shadow-warm-md hover:border-primary-300 cursor-pointer">
+                            <div class="flex items-start gap-4">
+                                <div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1696876746427-62dcf7465b9b" 
+                                         alt="Plain Naan bread freshly baked from tandoor oven" 
+                                         class="w-full h-full object-cover"
+                                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                    <div class="absolute top-1 right-1">
+                                        <span class="badge badge-success text-xs">Available</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <h3 class="text-base font-semibold text-text-primary mb-1">Naan (Plain)</h3>
+                                            <p class="text-xs text-text-secondary">Traditional tandoor-baked flatbread • Vegetarian</p>
+                                        </div>
+                                        <input type="checkbox" class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary" aria-label="Select Plain Naan">
+                                    </div>
+
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15d9e7448-1764657835987.png" alt="Category icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">Breads</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_139df90a2-1765188555609.png" alt="Preparation time icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">8 min</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1656a704b-1764666329043.png" alt="Vegetarian icon" class="w-4 h-4">
+                                            <span class="text-xs text-success">Vegetarian</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Price</p>
+                                                <p class="text-lg font-bold text-accent">$2.99</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Cost</p>
+                                                <p class="text-sm font-semibold text-text-primary">$0.80</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Margin</p>
+                                                <p class="text-sm font-semibold text-success">73%</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit Plain Naan">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete Plain Naan">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 6: Mango Lassi -->
+                        <div class="border border-secondary-200 rounded-lg p-4 transition-smooth hover:shadow-warm-md hover:border-primary-300 cursor-pointer">
+                            <div class="flex items-start gap-4">
+                                <div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1619898804188-e7bad4bd2127" 
+                                         alt="Mango Lassi yogurt drink with fresh mango pulp" 
+                                         class="w-full h-full object-cover"
+                                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                    <div class="absolute top-1 right-1">
+                                        <span class="badge badge-success text-xs">Available</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <h3 class="text-base font-semibold text-text-primary mb-1">Mango Lassi</h3>
+                                            <p class="text-xs text-text-secondary">Sweet yogurt drink with fresh mango pulp • Vegetarian</p>
+                                        </div>
+                                        <input type="checkbox" class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary" aria-label="Select Mango Lassi">
+                                    </div>
+
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15d9e7448-1764657835987.png" alt="Category icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">Beverages</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_139df90a2-1765188555609.png" alt="Preparation time icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">5 min</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1656a704b-1764666329043.png" alt="Vegetarian icon" class="w-4 h-4">
+                                            <span class="text-xs text-success">Vegetarian</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Price</p>
+                                                <p class="text-lg font-bold text-accent">$4.99</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Cost</p>
+                                                <p class="text-sm font-semibold text-text-primary">$1.50</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Margin</p>
+                                                <p class="text-sm font-semibold text-success">70%</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit Mango Lassi">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete Mango Lassi">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 7: Gulab Jamun -->
+                        <div class="border border-secondary-200 rounded-lg p-4 transition-smooth hover:shadow-warm-md hover:border-primary-300 cursor-pointer">
+                            <div class="flex items-start gap-4">
+                                <div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1615957507129-3c43c7ad5d5c" 
+                                         alt="Gulab Jamun dessert balls in sweet syrup" 
+                                         class="w-full h-full object-cover"
+                                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                    <div class="absolute top-1 right-1">
+                                        <span class="badge badge-success text-xs">Available</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <h3 class="text-base font-semibold text-text-primary mb-1">Gulab Jamun</h3>
+                                            <p class="text-xs text-text-secondary">Sweet milk dumplings in rose-flavored syrup • Vegetarian</p>
+                                        </div>
+                                        <input type="checkbox" class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary" aria-label="Select Gulab Jamun">
+                                    </div>
+
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15d9e7448-1764657835987.png" alt="Category icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">Desserts</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_139df90a2-1765188555609.png" alt="Preparation time icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">10 min</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1656a704b-1764666329043.png" alt="Vegetarian icon" class="w-4 h-4">
+                                            <span class="text-xs text-success">Vegetarian</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Price</p>
+                                                <p class="text-lg font-bold text-accent">$5.99</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Cost</p>
+                                                <p class="text-sm font-semibold text-text-primary">$1.80</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Margin</p>
+                                                <p class="text-sm font-semibold text-success">70%</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit Gulab Jamun">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete Gulab Jamun">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item 8: Dal Makhani (Unavailable) -->
+                        <div class="border border-error-200 rounded-lg p-4 transition-smooth hover:shadow-warm-md cursor-pointer bg-error-50">
+                            <div class="flex items-start gap-4">
+                                <div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_148c23cac-1764651863855.png" 
+                                         alt="Dal Makhani black lentils in creamy tomato sauce" 
+                                         class="w-full h-full object-cover opacity-60"
+                                         onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                    <div class="absolute top-1 right-1">
+                                        <span class="badge badge-error text-xs">Unavailable</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <h3 class="text-base font-semibold text-text-primary mb-1">Dal Makhani</h3>
+                                            <p class="text-xs text-error-600">Out of stock: Black lentils unavailable</p>
+                                        </div>
+                                        <input type="checkbox" class="w-4 h-4 text-primary border-secondary-300 rounded focus:ring-primary" aria-label="Select Dal Makhani">
+                                    </div>
+
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15d9e7448-1764657835987.png" alt="Category icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">Main Course</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_139df90a2-1765188555609.png" alt="Preparation time icon" class="w-4 h-4">
+                                            <span class="text-xs text-text-secondary">40 min</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1656a704b-1764666329043.png" alt="Vegetarian icon" class="w-4 h-4">
+                                            <span class="text-xs text-success">Vegetarian</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Price</p>
+                                                <p class="text-lg font-bold text-accent">$12.99</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Cost</p>
+                                                <p class="text-sm font-semibold text-text-primary">$4.20</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-secondary">Margin</p>
+                                                <p class="text-sm font-semibold text-success">68%</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-secondary-100 rounded transition-smooth" aria-label="Edit Dal Makhani">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_186beed82-1764699531223.png" alt="Edit icon" class="w-4 h-4">
+                                            </button>
+                                            <button class="p-2 hover:bg-error-100 rounded transition-smooth" aria-label="Delete Dal Makhani">
+                                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14d771fd7-1765132792896.png" alt="Delete icon" class="w-4 h-4">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Item Details & Analytics (25%) -->
+            <aside class="col-span-3 space-y-4" id="item-details">
+                <div class="card p-4">
+                    <h3 class="text-base font-heading font-semibold text-primary mb-4">Selected Item Details</h3>
+                    
+                    <!-- Item Image -->
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1721815967994-cae8b077191d" 
+                             alt="Butter Chicken dish with creamy tomato sauce" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                    </div>
+
+                    <!-- Item Info -->
+                    <div class="space-y-3 mb-4">
+                        <div>
+                            <h4 class="text-lg font-semibold text-primary mb-1">Butter Chicken</h4>
+                            <p class="text-xs text-text-secondary">Tender chicken in creamy tomato sauce with aromatic spices</p>
+                        </div>
+
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="badge badge-primary">Main Course</span>
+                            <span class="badge badge-success">Available</span>
+                            <span class="badge bg-error-100 text-error-800">Medium Spicy</span>
+                        </div>
+                    </div>
+
+                    <!-- Recipe Specifications -->
+                    <div class="border-t border-secondary-200 pt-4 mb-4">
+                        <h5 class="text-sm font-semibold text-primary mb-3">Recipe Details</h5>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Preparation Time</span>
+                                <span class="font-medium text-text-primary">25 minutes</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Serving Size</span>
+                                <span class="font-medium text-text-primary">1 portion (350g)</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Calories</span>
+                                <span class="font-medium text-text-primary">520 kcal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ingredients List -->
+                    <div class="border-t border-secondary-200 pt-4 mb-4">
+                        <h5 class="text-sm font-semibold text-primary mb-3">Key Ingredients</h5>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Chicken Breast</span>
+                                <span class="font-medium text-text-primary">200g</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Tomato Puree</span>
+                                <span class="font-medium text-text-primary">100ml</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Heavy Cream</span>
+                                <span class="font-medium text-text-primary">50ml</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Butter</span>
+                                <span class="font-medium text-text-primary">30g</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Spice Mix</span>
+                                <span class="font-medium text-text-primary">15g</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cost Analysis -->
+                    <div class="border-t border-secondary-200 pt-4 mb-4">
+                        <h5 class="text-sm font-semibold text-primary mb-3">Cost Analysis</h5>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Food Cost</span>
+                                <span class="font-medium text-text-primary">$5.20</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Menu Price</span>
+                                <span class="font-medium text-accent">$14.99</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Gross Profit</span>
+                                <span class="font-medium text-success">$9.79</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">Profit Margin</span>
+                                <span class="font-bold text-success">65%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Allergen Information -->
+                    <div class="border-t border-secondary-200 pt-4">
+                        <h5 class="text-sm font-semibold text-primary mb-3">Allergen Information</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge bg-warning-100 text-warning-800 text-xs">Dairy</span>
+                            <span class="badge bg-secondary-100 text-secondary-800 text-xs">Gluten-Free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sales Performance -->
+                <div class="card p-4">
+                    <h3 class="text-base font-heading font-semibold text-primary mb-4">Sales Performance</h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Today's Sales -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-text-secondary">Today's Orders</span>
+                                <span class="text-sm font-bold text-primary">18</span>
+                            </div>
+                            <div class="w-full bg-secondary-100 rounded-full h-2">
+                                <div class="bg-success h-2 rounded-full" style="width: 72%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Weekly Sales -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-text-secondary">This Week</span>
+                                <span class="text-sm font-bold text-primary">87</span>
+                            </div>
+                            <div class="w-full bg-secondary-100 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 58%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Monthly Sales -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-text-secondary">This Month</span>
+                                <span class="text-sm font-bold text-primary">342</span>
+                            </div>
+                            <div class="w-full bg-secondary-100 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Revenue Generated -->
+                        <div class="border-t border-secondary-200 pt-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-text-secondary">Total Revenue (Month)</span>
+                                <span class="text-lg font-bold text-success">$5,126</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Status -->
+                <div class="card p-4">
+                    <h3 class="text-base font-heading font-semibold text-primary mb-4 flex items-center gap-2">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b83e1d15-1764682762920.png" alt="Inventory icon" class="w-5 h-5">
+                        Inventory Status
+                    </h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-2 bg-success-50 rounded border border-success-200">
+                            <div>
+                                <p class="text-sm font-medium text-text-primary">Chicken Breast</p>
+                                <p class="text-xs text-success-600">In Stock: 45 kg</p>
+                            </div>
+                            <span class="status-dot status-active"></span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-2 bg-success-50 rounded border border-success-200">
+                            <div>
+                                <p class="text-sm font-medium text-text-primary">Tomato Puree</p>
+                                <p class="text-xs text-success-600">In Stock: 28 L</p>
+                            </div>
+                            <span class="status-dot status-active"></span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-2 bg-warning-50 rounded border border-warning-200">
+                            <div>
+                                <p class="text-sm font-medium text-text-primary">Heavy Cream</p>
+                                <p class="text-xs text-warning-600">Low: 8 L remaining</p>
+                            </div>
+                            <span class="status-dot status-pending"></span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-secondary-200 mt-12 py-6 px-6">
+        <div class="flex items-center justify-between">
+            <p class="text-sm text-text-secondary">© 2025 Khana Khazana Manager. All Rights Reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="javascript:void(0)" class="text-sm text-text-secondary hover:text-primary transition-smooth">Help & Support</a>
+                <a href="javascript:void(0)" class="text-sm text-text-secondary hover:text-primary transition-smooth">System Status</a>
+                <a href="javascript:void(0)" class="text-sm text-text-secondary hover:text-primary transition-smooth">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Keyboard Shortcuts Indicator -->
+    <div class="fixed bottom-6 right-6 bg-primary text-white px-4 py-2 rounded-lg shadow-warm-lg flex items-center gap-2 z-50">
+        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1eaf8a19c-1764894085538.png" alt="Keyboard icon" class="w-5 h-5">
+        <span class="text-sm font-medium">Press Ctrl+S to Save</span>
+    </div>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
